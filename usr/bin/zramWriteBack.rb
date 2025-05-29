@@ -8,19 +8,19 @@ def parse_options
 		opts.banner = "Usage: example.rb [options]"
 
 		opts.on("-z", "--zram INT", String, "zram device integer (required)") do |z|
-			options[:zram] = z
+			options[:zram] = z.to_i
 		end
 
 		opts.on("-t", "--time [SECONDS]", Integer, "time interval in seconds") do |t|
-			options[:time] = t
+			options[:time] = t.to_i
 		end
 		
 		opts.on("--warnth [WARN-PERCENTAGE]", String, "Warning threshold value") do |z|
-			options[:warnth] = z
+			options[:warnth] = z.to_i
 		end
 		
 		opts.on("--criticalth [CRITICAL-PERCENTAGE]", String, "Critical threshold value") do |z|
-			options[:criticalth] = z
+			options[:criticalth] = z.to_i
 		end
 
 		opts.on("-h", "--help", "Prints this help") do
